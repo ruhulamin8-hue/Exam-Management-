@@ -1,0 +1,41 @@
+{
+  "name": "barpeta-exam-management-system",
+  "version": "1.0.0",
+  "description": "Barpeta Exam Management System - original HTA packaged as a Windows application",
+  "main": "main.js",
+  "author": "Barpeta Exam Management System",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "in.barpeta.exammanagementsystem",
+    "productName": "Barpeta Exam Management System",
+    "asar": true,
+    "files": [
+      "main.js",
+      "app/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
